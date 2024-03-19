@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  background-color: #EEEFF2;
+}
+
+.dashboard {
+  margin-top: 150px; /* Adjust the margin-top as needed */
+  margin-left: 200px;
+  font-family: "Inter", sans-serif;
+}
+
+.topbar {
+  background-color: #FFFFFF;
+  height: 100px;
+  width: calc(100% - 150px);
+  position: fixed;
+  top: 0;
+  left: 150px;
+  padding-left: 40px;
+  border-bottom: 1px solid #000;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.topbar-title {
+  color: #806296; /* Color for the title */
+  font-size: 32px; /* Adjust font size as needed */
+  margin-top: 30px;
+  margin-left: 20px;
+  border-bottom: 4px solid #806296; /* 4px thick stroke under the title */
+  display: inline-block; /* Make the title div as wide as its content */
+  height: calc(100% - 30px - 4px + 2px);
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between; /* Distribute contents evenly */
+  align-items: center; /* Center content vertically */
+  position: fixed;
+  margin-bottom: 20px;
+  top: 200px; /* Position below the topbar */
+  left: 150px;
+  width: calc(100% - 150px);
+  font-family: "Inter", sans-serif;
+}
+
+.title-additional-info {
+  margin: 0 30px 30px 30px;
+  display: flex;
+  justify-content: center; /* Align content in the center horizontally */
+  width: 100%;
+  padding: 20px; /* Add padding */
+}
+
+.title-additional-info-bar {
+  background-color: #2D1D43; /* Background color */
+  width: 100%; /* Match the width of the parent */
+  height: 100%; /* Match the height of the parent */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.title-word {
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-right: 200px;
+  font-size: 16px;
+}
+
+.info-item {
+  background-color: #FFFFFF;
+}
+
+.sidebar {
+  width: 150px;
+  height: 100vh;
+  background-color: #2D1D43;
+  position: fixed; /* Fixed position to stay at the left */
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+  z-index: 1; /* Ensure sidebar is on top of the vertical bar */
+}
+.sidebar .logo {
+  margin-bottom: 100px;
+  color: white;
+}
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 48px;
+}
+.sidebar a i {
+  font-family: "Font Awesome 5 Free";
+}/*# sourceMappingURL=style.css.map */
