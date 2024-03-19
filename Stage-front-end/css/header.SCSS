@@ -1,0 +1,65 @@
+// Variables
+$topbar-height: 100px;
+$sidebar-width: 150px;
+$topbar-title-margin-top: 30px;
+$topbar-title-height: 32px;
+$topbar-title-border-thickness: 4px;
+
+body {
+    margin: 0;
+    background-color: #EEEFF2;
+}
+
+.topbar {
+    background-color: #FFFFFF;
+    height: $topbar-height;
+    width: calc(100% - #{$sidebar-width});
+    position: fixed;
+    top: 0;
+    left: $sidebar-width;
+    padding-left: 40px;
+    border-bottom: 1px solid #000;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+.topbar-title {
+    color: #806296; /* Color for the title */
+    font-size: $topbar-title-height; /* Adjust font size as needed */
+    margin-top: $topbar-title-margin-top;
+    margin-left: 20px;
+    border-bottom: $topbar-title-border-thickness solid #806296; /* 4px thick stroke under the title */
+    display: inline-block; /* Make the title div as wide as its content */
+    height: calc(100% - #{$topbar-title-margin-top} - #{$topbar-title-border-thickness} + 2px);
+}
+
+.sidebar {
+    width: $sidebar-width;
+    height: 100vh;
+    background-color: #2D1D43;
+    position: fixed; /* Fixed position to stay at the left */
+    top: 0; /* Position at the top */
+    left: 0; /* Position at the left */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    z-index: 1; /* Ensure sidebar is on top of the vertical bar */
+
+    .logo {
+        margin-bottom: 100px;
+        color: white;
+    }
+
+    a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        margin-bottom: 48px;
+
+        i {
+            font-family: 'Font Awesome 5 Free';
+        }
+    }
+}

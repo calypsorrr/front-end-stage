@@ -9,103 +9,180 @@ body {
     margin: 0;
     background-color: #EEEFF2;
 }
+
+/* Global */
+
 .dashboard {
     margin-top: 150px; /* Adjust the margin-top as needed */
-    margin-left: 200px;
+    margin-left: 215px;
     font-family: 'Inter', sans-serif;
-  }
 
-.topbar {
-    background-color: #FFFFFF;
-    height: $topbar-height;
-    width: calc(100% - #{$sidebar-width});
-    position: fixed;
-    top: 0;
-    left: $sidebar-width;
-    padding-left: 40px;
-    border-bottom: 1px solid #000;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-}
-
-.topbar-title {
-    color: #806296; /* Color for the title */
-    font-size: $topbar-title-height; /* Adjust font size as needed */
-    margin-top: $topbar-title-margin-top;
-    margin-left: 20px;
-    border-bottom: $topbar-title-border-thickness solid #806296; /* 4px thick stroke under the title */
-    display: inline-block; /* Make the title div as wide as its content */
-    height: calc(100% - #{$topbar-title-margin-top} - #{$topbar-title-border-thickness} + 2px);
-}
-
-.additional-info {
-    display: flex;
-    justify-content: space-between; /* Distribute contents evenly */
-    align-items: center; /* Center content vertically */
-    position: fixed;
-    margin-bottom: 20px;
-    top: $topbar-height + 100px; /* Position below the topbar */
-    left: $sidebar-width;
-    width: calc(100% - #{$sidebar-width});
-    font-family: 'Inter', sans-serif;
-}
-
-.title-additional-info {
-    margin: 0 30px 30px 30px;
-    display: flex;
-    justify-content: center; /* Align content in the center horizontally */
-    width: calc(100%);
-    padding: 20px; /* Add padding */
-}
-
-.title-additional-info-bar {
-    background-color: #2D1D43; /* Background color */
-    width: 100%; /* Match the width of the parent */
-    height: 100%; /* Match the height of the parent */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-
-}
-
-.title-word {
-    color: #FFFFFF;
-    font-weight: bold;
-    margin-right: 200px;
-    font-size: 16px;
-}
-
-.info-item {
-    background-color: #FFFFFF;
-}
-
-.sidebar {
-    width: $sidebar-width;
-    height: 100vh;
-    background-color: #2D1D43;
-    position: fixed; /* Fixed position to stay at the left */
-    top: 0; /* Position at the top */
-    left: 0; /* Position at the left */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 20px;
-    z-index: 1; /* Ensure sidebar is on top of the vertical bar */
-
-    .logo {
-        margin-bottom: 100px;
-        color: white;
+    a.current-page {
+        color: #404152; // Color for current page links
     }
 
     a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        margin-bottom: 48px;
-
-        i {
-            font-family: 'Font Awesome 5 Free';
+        color: #666775; // Default color for non-current page links
+        &:hover {
+            color: #2D1D43; // Change color on hover (optional)
         }
     }
+}
+
+.dashboard a {
+    text-decoration: none; /* Remove underlining */
+}
+
+/* Index */
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin-bottom: 20px;
+    top: $topbar-height + 100px;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
+    font-family: 'Inter', sans-serif;
+
+    .title-additional-info {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        width: calc(100%);
+        padding-top: 10px;
+    }
+
+    .title-additional-info-bar {
+        background-color: #2D1D43;
+        width: 93%;
+        height: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+        display: grid; // Use grid layout for better alignment
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Adjust the minmax width as needed
+        justify-content: center; // Center content horizontally
+        align-items: center; // Center content vertically
+    }
+
+    .title-word {
+        color: #FFFFFF;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .section-additional-info {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        width: calc(100%);
+        padding-top: 10px;
+    }
+
+    .section-additional-info-bar {
+        background-color: #FFFFFF;
+        width: 93%;
+        height: 100%;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+        display: grid; // Use grid layout for better alignment
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Adjust the minmax width as needed
+        justify-content: center; // Center content horizontally
+        align-items: center; // Center content vertically
+        position: relative;
+    }
+    
+    .action-link {
+        justify-self: end;
+        margin-right: 250px; // Align anchor elements horizontally in their own column
+    }
+
+    .section-word {
+        color: #2D1D43;
+        font-size: 16px;
+    }
+
+    a {
+        color: #2D1D43;
+        text-decoration: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* Details */
+
+.separator{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.additional-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    position: fixed;
+    margin-bottom: 20px;
+    top: $topbar-height + 100px;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
+    font-family: 'Inter', sans-serif;
+
+    .arrow-left {
+        padding-left: 65px;
+        font-size: 24px; // Adjust size as needed
+        color: #000; // Adjust color as needed
+    
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .title-details{
+        padding-left: 65px;
+        text-align: left;
+    }
+
+    .title-details p {
+        margin: 20px 0; // Adjust margins as needed
+        align-self: flex-start; // Align each paragraph to the start of the flex container
+    }
+
+    .title-node{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    i.refresh-icon {
+        font-size: 16px;
+        color: #806296;
+        margin-left: 5px; // Adjust the margin as needed to separate the icon from the text
+        cursor: pointer; // Set cursor to pointer to indicate it's clickable
+    }
+}
+
+.blocks-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 columns
+    grid-gap: 20px; // Adjust gap between blocks as needed
+    align-items: center;
+    position: relative; // Make the container relative for absolute positioning of blocks
+    top: 300px; // Adjust the top position as needed
+    left: 215px; // Adjust the left position as needed
+    width: calc(100% - 215px); // Adjust the width to account for left position
+    font-family: 'Inter', sans-serif;
+}
+
+.block {
+    width: 70%; // Each block takes full width initially
+    background-color: #FFFFFF; // Example background color
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
