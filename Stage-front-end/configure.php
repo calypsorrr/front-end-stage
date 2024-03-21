@@ -47,10 +47,10 @@ foreach ($data['data'] as $item) {
         <p>Z-position</p>
         <input type="text" name="z-value" id="z-value" value="<?php echo $z_value; ?>">
     </div>
-    <div class="save-button">
+    <a href="accept.php" class="save-button">
         <div class="save-button-box">
             <span>Save</span>
             <i class="fas fa-check"></i>
         </div>
-    </div> 
+    </a>
 </div>

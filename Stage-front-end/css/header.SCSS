@@ -64,11 +64,13 @@ body {
 
   .logo {
     align-self: center;
+    transform: translateY(-18%);
   }
 
   .agl{
-    height: 150px;
-    width: 150px;
+    height: 175px;
+    width: 175px;
+    margin-bottom: -20px
   }
 
   a {
