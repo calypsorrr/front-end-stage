@@ -16,7 +16,7 @@
 
         echo '<div class="breadcrumbs">' . implode(' > ', $breadcrumbs) . '</div>';
     ?>
-    <div class="additional-info">
+    <div class="additional-info" id="additional-info">
         <div class="title-additional-info">
             <div class="title-additional-info-bar">
                 <span class="title-word">Datetime</span>
@@ -27,24 +27,34 @@
         </div>
         <div class="section-additional-info">
             <div class="section-additional-info-bar">
-                <span class="section-word">22/03/2024</span>
+                <span class="section-word-date">22/03/2024</span>
                 <span class="section-word">1</span>
-                <span class="section-word">Slave</span>
+                <span class="section-word">slave</span>
                 <span class="section-word">Bad</span>
-                <a href="details.php" class="action-link"><i class="fas fa-eye"></i></a>
-                <a href="#" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                <div class="icon-info">
+                    <a href="details.php" class="action-link"><i class="fas fa-eye"></i></a>
+                    <a href="#" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                </div>
             </div>
         </div>
         <div class="section-additional-info">
             <div class="section-additional-info-bar">
-                <span class="section-word">22/02/2024</span>
+                <span class="section-word-date">22/02/2024</span>
                 <span class="section-word">2</span>
                 <span class="section-word">gmaster</span>
                 <span class="section-word">Good</span>
-                <a href="details.php" class="action-link"><i class="fas fa-eye"></i></a>
-                <a href="#" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                <div class="icon-info">
+                    <a href="details.php" class="action-link"><i class="fas fa-eye"></i></a>
+                    <a href="#" class="action-link"><i class="fas fa-trash-alt"></i></a>
+                </div>
             </div>
         </div>
-    </div>    
+        <div class="create-button">
+            <div class="button-content">
+                <i class="fas fa-plus"></i>
+                <span>Create New</span>
+            </div>
+        </div> 
+    </div>   
 </body>
 </html>

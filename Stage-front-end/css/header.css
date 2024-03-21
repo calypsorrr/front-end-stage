@@ -12,16 +12,17 @@ body {
   left: 150px;
   padding-left: 40px;
   border-bottom: 1px solid #000;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }
 
 .topbar-title {
-  color: #806296; /* Color for the title */
-  font-size: 32px; /* Adjust font size as needed */
+  color: #806296;
+  font-size: 32px;
   margin-top: 30px;
   margin-left: 20px;
-  border-bottom: 4px solid #806296; /* 4px thick stroke under the title */
-  display: inline-block; /* Make the title div as wide as its content */
+  border-bottom: 4px solid #806296;
+  display: inline-block;
   height: calc(100% - 30px - 4px + 2px);
 }
 
@@ -29,27 +30,38 @@ body {
   width: 150px;
   height: 100vh;
   background-color: #2D1D43;
-  position: fixed; /* Fixed position to stay at the left */
-  top: 0; /* Position at the top */
-  left: 0; /* Position at the left */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 20px;
-  z-index: 1; /* Ensure sidebar is on top of the vertical bar */
 }
 .sidebar .logo {
-  margin-bottom: 100px;
-  color: white;
+  align-self: center;
+}
+.sidebar .agl {
+  height: 150px;
+  width: 150px;
 }
 .sidebar a {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 48px;
 }
 .sidebar a i {
   font-family: "Font Awesome 5 Free";
+}
+.sidebar a.active {
+  border-color: #806296;
+  border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #806296;
+  margin-bottom: 36px;
+  margin-top: -15px;
 }/*# sourceMappingURL=header.css.map */

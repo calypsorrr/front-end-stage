@@ -1,148 +1,169 @@
 // Variables
 $topbar-height: 100px;
 $sidebar-width: 150px;
+$font-size-text: 16px;
+$font-size-title: 24px;
 $topbar-title-margin-top: 30px;
 $topbar-title-height: 32px;
 $topbar-title-border-thickness: 4px;
+$color-current-page: #404152;
+$color-refresh-icon: #806296;
+$link-default-color: #666775;
+$color-title-text-link: #2D1D43;
+$section-shadow-color: rgba(0, 0, 0, 0.1);
+$title-background-color: #FFFFFF;
+$additional-info-padding: 20px;
+$additional-info-border-radius: 5px;
+$additional-info-shadow: 0px 5px 5px $section-shadow-color;
+$block-width: 70%;
+$block-gap: 20px;
+$padding-separator: 5px;
 
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin div-blocks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    position: relative;
+    left: $sidebar-width;
+    width: calc(100% - #{$sidebar-width});
+    font-family: 'Inter', sans-serif;
+}
+
+@mixin additional-info-bar{
+    width: 90.5%;
+    height: 100%;
+    padding: $additional-info-padding;
+    border-radius: $additional-info-border-radius;
+    box-shadow: $additional-info-shadow;
+    display: grid;
+    align-items: center;
+}
+
+// Global
 body {
     margin: 0;
     background-color: #EEEFF2;
 }
 
-/* Global */
-
 .dashboard {
-    margin-top: 150px; /* Adjust the margin-top as needed */
-    margin-left: 215px;
+    margin-top: $topbar-height + 50px; 
+    margin-left: $sidebar-width + 65px; 
     font-family: 'Inter', sans-serif;
 
     a.current-page {
-        color: #404152; // Color for current page links
+        color: $color-current-page
     }
 
     a {
-        color: #666775; // Default color for non-current page links
+        color: $link-default-color; 
         &:hover {
-            color: #2D1D43; // Change color on hover (optional)
+            color: $color-title-text-link; 
         }
     }
 }
 
 .dashboard a {
-    text-decoration: none; /* Remove underlining */
+    text-decoration: none;
 }
 
-/* Index */
-
+// Index
 .additional-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
+    @include div-blocks;
     margin-bottom: 20px;
-    top: $topbar-height + 100px;
-    left: $sidebar-width;
-    width: calc(100% - #{$sidebar-width});
-    font-family: 'Inter', sans-serif;
 
     .title-additional-info {
         margin: 0;
-        display: flex;
-        justify-content: center;
-        width: calc(100%);
+        @include flex-center;
+        width: 100%;
         padding-top: 10px;
     }
 
     .title-additional-info-bar {
-        background-color: #2D1D43;
-        width: 93%;
-        height: 100%;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-        display: grid; // Use grid layout for better alignment
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Adjust the minmax width as needed
-        justify-content: center; // Center content horizontally
-        align-items: center; // Center content vertically
+        @include additional-info-bar;
+        background-color: $color-title-text-link;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 400px);
     }
 
     .title-word {
-        color: #FFFFFF;
+        color: $title-background-color;
         font-weight: bold;
-        font-size: 16px;
+        font-size: $font-size-text;
     }
 
     .section-additional-info {
         margin: 0;
-        display: flex;
-        justify-content: center;
-        width: calc(100%);
+        @include flex-center;
+        width: 100%;
         padding-top: 10px;
     }
 
     .section-additional-info-bar {
-        background-color: #FFFFFF;
-        width: 93%;
-        height: 100%;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-        display: grid; // Use grid layout for better alignment
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); // Adjust the minmax width as needed
-        justify-content: center; // Center content horizontally
-        align-items: center; // Center content vertically
+        @include additional-info-bar;
+        background-color: $title-background-color;
+        grid-template-columns: repeat(auto-fill, 400px) repeat(2, 200px);
         position: relative;
-    }
-    
-    .action-link {
-        justify-self: end;
-        margin-right: 250px; // Align anchor elements horizontally in their own column
     }
 
     .section-word {
-        color: #2D1D43;
-        font-size: 16px;
+        color: $color-title-text-link;
+        font-size: $font-size-text;
+    }
+
+    .section-word-date {
+        color: red; 
+        font-size: $font-size-text;
     }
 
     a {
-        color: #2D1D43;
+        color: $color-title-text-link;
         text-decoration: none;
+    }
+
+    .action-link {
+        padding-left: 20px;
+    }
+
+    .create-button {
+        width: 135px;
+        height: 30px;
+        background-color: $color-refresh-icon;
+        border-radius: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        cursor: pointer;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: calc(-115px + #{$additional-info-padding * 2});
+        left: 64px;
+        font-family: 'Inter', sans-serif;
+        padding: 10px;
+        box-shadow: $additional-info-shadow;
+    }
+
+    .button-content i {
+        margin-right: 10px;
     }
 }
-
 /* Details */
 
 .separator{
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: $padding-separator;
+    padding-right: $padding-separator;
 }
 
 .additional-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    position: fixed;
-    margin-bottom: 20px;
-    top: $topbar-height + 100px;
-    left: $sidebar-width;
+    @include div-blocks;
     width: calc(100% - #{$sidebar-width});
-    font-family: 'Inter', sans-serif;
-
-    .arrow-left {
-        padding-left: 65px;
-        font-size: 24px; // Adjust size as needed
-        color: #000; // Adjust color as needed
-    
-        a {
-            text-decoration: none;
-        }
-    }
 
     .title-details{
         padding-left: 65px;
@@ -150,39 +171,130 @@ body {
     }
 
     .title-details p {
-        margin: 20px 0; // Adjust margins as needed
-        align-self: flex-start; // Align each paragraph to the start of the flex container
+        margin: 20px 0;
+        align-self: flex-start;
     }
 
     .title-node{
-        font-size: 24px;
+        font-size: $font-size-title;
         font-weight: 600;
     }
 
     i.refresh-icon {
-        font-size: 16px;
-        color: #806296;
-        margin-left: 5px; // Adjust the margin as needed to separate the icon from the text
-        cursor: pointer; // Set cursor to pointer to indicate it's clickable
+        font-size: $font-size-text;
+        color: $color-refresh-icon;
+        margin-left: 5px;
+        cursor: pointer;
     }
 }
 
 .blocks-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 columns
-    grid-gap: 20px; // Adjust gap between blocks as needed
-    align-items: center;
-    position: relative; // Make the container relative for absolute positioning of blocks
-    top: 300px; // Adjust the top position as needed
-    left: 215px; // Adjust the left position as needed
-    width: calc(100% - 215px); // Adjust the width to account for left position
+    grid-template-columns: repeat(3, 500px);
+    grid-gap: $block-gap;
+    position: relative; 
+    left: 192px;
+    width: calc(100% - 215px); 
     font-family: 'Inter', sans-serif;
+
+    .block {
+        width: 90%;
+        padding: 20px;
+        position: relative;
+    }
+
+    .block-title{
+        background-color: #2D1D43;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-size: $font-size-title;
+        padding: 20px;
+
+        span {
+            color: #FFFFFF;
+        }
+    }
+
+    .edit-icon {
+        position: absolute;
+        right: 50px;
+    }
+    
+    .edit-icon i {
+        color: #FFFFFF;
+        font-size: $font-size-text;
+    }
+
+    .block-info{
+        background-color: #FFFFFF;
+        font-size: $font-size-text;
+        padding: 15px;
+        border-bottom: 1px solid #000;
+        position: relative;
+
+        span {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .block-info-value {
+            position: absolute;
+            right: 150px;
+        }
+
+        span:last-child {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
 }
 
-.block {
-    width: 70%; // Each block takes full width initially
-    background-color: #FFFFFF; // Example background color
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+/* Configure */
+
+.title-configure{
+    font-size: $font-size-title;
+}
+
+.value-boxes{
+    position: relative; 
+    left: 215px;
+    font-family: 'Inter', sans-serif;
+
+    input {
+        border: 1px solid #ccc;
+        width: 300px;
+        height: 40px;
+        box-sizing: border-box;
+        transition: border-color 0.5s;
+    }
+    
+    .value-box input[type="text"] {
+        padding-left: 10px;
+    }
+
+    .save-button{
+        width: 90px;
+        height: 20px;
+        background-color: $color-refresh-icon;
+        border-radius: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        cursor: pointer;
+        position: absolute;
+        bottom: calc(-115px + #{$additional-info-padding * 2});
+        font-family: 'Inter', sans-serif;
+        padding: 10px;
+        box-shadow: $additional-info-shadow;
+    }
+
+    .save-button-box{
+        display: flex;
+        align-items: center;
+
+        i {
+            margin-left: 15px;
+        }
+    }
 }

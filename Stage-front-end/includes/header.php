@@ -1,3 +1,7 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +15,11 @@
 <body class="details-page">
     <div class="sidebar">
         <div class="logo">
-            <i class="fas fa-icons fa-3x"></i>
+            <img class="agl" src="../img/Agilica_Final.svg" alt="Logo">
         </div>
-        <a href="index.php"><i class="fas fa-home"></i></a>
-        <a href="details.php"><i class="fas fa-globe"></i></a>
-        <a href="#section3"><i class="fas fa-cube"></i></a>
+        <a href="index.php" <?php if ($currentPage === 'index.php') echo 'class="active"'; ?>><i class="fas fa-home"></i></a>
+        <a href="details.php" <?php if ($currentPage === 'details.php') echo 'class="active"'; ?>><i class="fas fa-globe"></i></a>
+        <a href="configure.php" <?php if ($currentPage === 'configure.php') echo 'class="active"'; ?>><i class="fas fa-cube"></i></a>
         <a href="#section4"><i class="fas fa-map"></i></a>
         <a href="#section5"><i class="fas fa-info-circle"></i></a>
     </div>
-    <?php
-    $currentPage = basename($_SERVER['PHP_SELF']);
-    ?>
