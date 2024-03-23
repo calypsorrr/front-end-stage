@@ -1,16 +1,32 @@
 {
-    "data": [
+  "data": [
       {
-        "axis": "X",
-        "value": 3
+          "axis": "X",
+          "value": 3
       },
       {
-        "axis": "Y",
-        "value": 5
+          "axis": "Y",
+          "value": 5
       },
       {
-        "axis": "Z",
-        "value": -3
+          "axis": "Z",
+          "value": -3
+      },
+      {
+          "axis": "X range",
+          "value": 65
+      },
+      {
+          "axis": "Y range",
+          "value": 100
+      },
+      {
+          "axis": "X origin",
+          "value": 5
+      },
+      {
+          "axis": "Y origin",
+          "value": 7
       }
-    ]
-  }
+  ]
+}

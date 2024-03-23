@@ -18,8 +18,8 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <img class="agl" src="../img/Agilica_Final.svg" alt="Logo">
         </div>
         <a href="index.php" <?php if ($currentPage === 'index.php') echo 'class="active"'; ?>><i class="fas fa-home"></i></a>
-        <a href="details.php" <?php if ($currentPage === 'details.php') echo 'class="active"'; ?>><i class="fas fa-globe"></i></a>
-        <a href="configure.php" <?php if ($currentPage === 'configure.php') echo 'class="active"'; ?>><i class="fas fa-cube"></i></a>
-        <a href="#section4"><i class="fas fa-map"></i></a>
-        <a href="#section5"><i class="fas fa-info-circle"></i></a>
+        <a href="map.php" <?php if ($currentPage === 'map.php') echo 'class="active"'; ?>><i class="fas fa-globe"></i></a>
+        <a href="3D.php" <?php if ($currentPage === '3D.php') echo 'class="active"'; ?>><i class="fas fa-cube"></i></a>
+        <a href="floorplan.php" <?php if ($currentPage === 'floorplan.php') echo 'class="active"'; ?>><i class="fas fa-map"></i></a>
+        <a href="info.php" <?php if ($currentPage === 'info.php') echo 'class="active"'; ?>><i class="fas fa-info-circle"></i></a>
     </div>

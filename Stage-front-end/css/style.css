@@ -197,6 +197,12 @@ body {
   position: absolute;
   right: 150px;
 }
+.blocks-container .block-info .block-info-value-status {
+  position: absolute;
+  right: 105px;
+  color: green;
+  font-weight: 600;
+}
 .blocks-container .block-info span:last-child {
   margin-right: 0;
   margin-left: 0;
@@ -245,4 +251,90 @@ body {
 }
 .value-boxes .save-button-box i {
   margin-left: 15px;
+}
+
+/* Accept */
+.value-boxes-accept {
+  position: relative;
+  left: 215px;
+  font-family: "Inter", sans-serif;
+  bottom: 25px;
+}
+.value-boxes-accept .back-button-accept {
+  width: 90px;
+  height: 20px;
+  background-color: #806296;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  cursor: pointer;
+  position: absolute;
+  bottom: calc(-115px + 40px);
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+.value-boxes-accept .save-button-box {
+  display: flex;
+  align-items: center;
+}
+.value-boxes-accept .save-button-box i {
+  margin-right: 15px;
+}
+
+/* Floorplan */
+.additional-details {
+  margin-top: 125px;
+  font-family: "Inter", sans-serif;
+}
+
+.upload-box {
+  margin-top: 30px;
+  font-family: "Inter", sans-serif;
+  /* Style the button part of the input */
+  /* Optionally, style for other browsers */
+}
+.upload-box .upload-label {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+.upload-box .upload-input {
+  display: block;
+  border: none;
+  background-color: #f0f0f0;
+}
+.upload-box .upload-input:focus {
+  outline: none;
+  background-color: #e0e0e0;
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.upload-box .upload-input::-webkit-file-upload-button {
+  background-color: #806296;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.upload-box .upload-input::-moz-file-upload-button {
+  background-color: #806296;
+  color: white;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.upload-box .upload-input::file-selector-button {
+  background-color: #806296;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=style.css.map */
