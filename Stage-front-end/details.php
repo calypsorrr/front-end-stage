@@ -9,7 +9,7 @@
     </div>
     <div class="additional-details">
         <div class="title-details">
-            <p class="title-node">Node 1 <i class="fas fa-sync-alt refresh-icon"></i></p>
+            <p class="title-node">Node 1 <i class="fas fa-sync-alt refresh-icon"></i><i class="fas fa-pencil-alt refresh-icon"></i></p>
             <p>Last updated at 24/01/2024: 12:58:22 + 00:00</p>
             <p>Sync: Unreachable</p>
         </div>

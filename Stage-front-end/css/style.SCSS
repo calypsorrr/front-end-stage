@@ -225,12 +225,15 @@ body {
         font-size: $font-size-text;
     }
 
-    .block-info{
+    .block-info {
         background-color: #FFFFFF;
         font-size: $font-size-text;
         padding: 15px;
-        border-bottom: 1px solid #000;
         position: relative;
+    
+        &:not(:last-child) {
+            border-bottom: 1px solid #000;
+        }
 
         span {
             display: inline-block;
@@ -344,9 +347,51 @@ body {
 }
 
 /* Floorplan */
-.additional-details{
-    margin-top: $topbar-height + 25px; 
+
+.value-boxes-floorplan{
+    position: relative; 
+    left: 215px;
     font-family: 'Inter', sans-serif;
+    margin-top: 140px;
+
+    input {
+        border: 1px solid #ccc;
+        width: 300px;
+        height: 40px;
+        box-sizing: border-box;
+        transition: border-color 0.5s;
+    }
+    
+    .value-box input[type="text"] {
+        padding-left: 10px;
+    }
+
+    .save-button{
+        width: 90px;
+        height: 20px;
+        background-color: $color-refresh-icon;
+        border-radius: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        cursor: pointer;
+        position: absolute;
+        bottom: calc(-115px + #{$additional-info-padding * 2});
+        font-family: 'Inter', sans-serif;
+        padding: 10px;
+        box-shadow: $additional-info-shadow;
+        text-decoration: none;
+    }
+
+    .save-button-box{
+        display: flex;
+        align-items: center;
+
+        i {
+            margin-left: 15px;
+        }
+    }
 }
 
 .upload-box {
@@ -374,7 +419,6 @@ body {
         box-shadow: $additional-info-shadow;
     }
 
-    /* Style the button part of the input */
     .upload-input::-webkit-file-upload-button {
         background-color: #806296;
         color: white;
@@ -384,7 +428,6 @@ body {
 
     }
 
-    /* Optionally, style for other browsers */
     .upload-input::-moz-file-upload-button {
         background-color: #806296;
         color: white;
@@ -402,4 +445,61 @@ body {
         border: none;
         box-shadow: $additional-info-shadow;
     }
+}
+
+/* Info */
+
+
+.info{
+    @include div-blocks;
+    margin-top: 140px;
+    text-align: center;
+}
+
+.blocks-container-info{
+    display: grid;
+    grid-template-columns: repeat(3, 500px);
+    grid-gap: $block-gap;
+    position: relative; 
+    width: calc(100% - 215px); 
+    font-family: 'Inter', sans-serif;
+    left: 75px;
+    top: 50px;
+    margin: 0 auto;
+    justify-content: center;
+
+
+    .block-title-info{
+        background-color: #2D1D43;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        font-size: $font-size-title;
+        padding: 20px;
+        text-align: center;
+    
+        span {
+            color: #FFFFFF;
+        }
+    }
+    
+    .block-content {
+        background-color: #FFFFFF;
+        font-size: $font-size-text;
+        padding: 10px;
+        position: relative;
+    
+        ul {
+            margin-bottom: 20px;
+        }
+    
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+/* 3D */
+
+body.no-scrollbars {
+    overflow: hidden;
 }
