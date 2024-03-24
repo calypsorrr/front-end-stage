@@ -292,7 +292,7 @@ body {
   position: relative;
   left: 215px;
   font-family: "Inter", sans-serif;
-  margin-top: 140px;
+  top: 50px;
 }
 .value-boxes-floorplan input {
   border: 1px solid #ccc;
@@ -386,7 +386,7 @@ body {
   width: calc(100% - 150px);
   font-family: "Inter", sans-serif;
   margin-top: 140px;
-  text-align: center;
+  margin-left: 603px;
 }
 
 .blocks-container-info {
@@ -396,7 +396,7 @@ body {
   position: relative;
   width: calc(100% - 215px);
   font-family: "Inter", sans-serif;
-  left: 75px;
+  left: 60px;
   top: 50px;
   margin: 0 auto;
   justify-content: center;

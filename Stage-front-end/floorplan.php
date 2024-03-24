@@ -32,7 +32,7 @@ foreach ($data['data'] as $item) {
         <p class="title-configure">Floorplan </p>
     </div>
 </div>
-<div class="value-boxes">
+<div class="value-boxes-floorplan">
     <div class="value-box">
         <p>X range</p>
         <input type="text" name="x-range" id="x-range" value="<?php echo $x_range; ?>">
